@@ -42,3 +42,6 @@ class BasePage:
     def go_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
+    def write_data(self, username, email, password):
+        with open('data.txt', 'a+', encoding='utf-8') as f:
+            f.write(f"username={username}\nemail={email}\npassword={password}\n")
